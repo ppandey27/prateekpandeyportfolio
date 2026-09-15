@@ -1,10 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import "./App.css";
 
-// =====================================================
-// ONLY CHANGE THESE TWO FILENAMES
-// Put both files inside the public folder
-// =====================================================
+
 const PROFILE_IMAGE = "my-photo.jpg";
 const RESUME_FILE = "my-resume.pdf";
 
@@ -274,7 +271,7 @@ function App() {
           <div className="header-actions">
 
             <a
-              href={`${process.env.PUBLIC_URL}/${RESUME_FILE}`}
+              href={`/${RESUME_FILE}`}
               download={RESUME_FILE}
               className="resume-btn-header"
             >
@@ -300,8 +297,6 @@ function App() {
       >
 
         <div className="hero-left">
-
-          
 
           <p className="section-tag">
             WELCOME TO MY PORTFOLIO
@@ -338,7 +333,7 @@ function App() {
             </button>
 
             <a
-              href={`${process.env.PUBLIC_URL}/${RESUME_FILE}`}
+              href={`/${RESUME_FILE}`}
               download={RESUME_FILE}
               className="secondary-btn"
             >
@@ -386,19 +381,19 @@ function App() {
 
              <div className="profile-image">
 
-  <img
-    src={`${process.env.PUBLIC_URL}/${PROFILE_IMAGE}`}
-    alt="Prateek Pandey"
-    style={{
-      width: "100%",
-      height: "100%",
-      objectFit: "cover",
-    }}
-  />
+              <img
+                src={`/${PROFILE_IMAGE}`}
+                alt="Prateek Pandey"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                }}
+              />
 
-  <div className="image-overlay"></div>
+              <div className="image-overlay"></div>
 
-</div>
+            </div>
 
               <div className="profile-info">
                 <strong>Prateek Pandey</strong>
@@ -597,7 +592,7 @@ function App() {
         <div className="section-header-box">
 
           <span className="section-tag">
-           TECHNICAL EXPERTISE
+            TECHNICAL EXPERTISE
           </span>
 
           <h2 className="section-title">
