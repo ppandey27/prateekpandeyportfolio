@@ -4,20 +4,19 @@ import "./App.css";
 const PROFILE_IMAGE = "my-photo.jpg";
 const RESUME_FILE = "my-resume.pdf";
 
-// Roles ko component ke bahar shift kiya gaya hai taaki unnecessary re-creations na ho
-const ROLES = [
-  "Full Stack Developer",
-  "React Native App Builder",
-  "React Specialist",
-  "Django Architect",
-];
-
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [typedText, setTypedText] = useState("");
   const [roleIndex, setRoleIndex] = useState(0);
 
   const canvasRef = useRef(null);
+
+  const roles = [
+    "Full Stack Developer",
+    "React Native App Builder",
+    "React Specialist",
+    "Django Architect",
+  ];
 
   // Typing effect loop
   useEffect(() => {
@@ -26,7 +25,7 @@ function App() {
     let timeout;
 
     const type = () => {
-      const word = ROLES[roleIndex];
+      const word = roles[roleIndex];
 
       if (!deleting) {
         setTypedText(word.substring(0, index + 1));
@@ -43,7 +42,7 @@ function App() {
 
         if (index === 0) {
           deleting = false;
-          setRoleIndex((prev) => (prev + 1) % ROLES.length);
+          setRoleIndex((prev) => (prev + 1) % roles.length);
         }
       }
 
@@ -53,7 +52,7 @@ function App() {
     type();
 
     return () => clearTimeout(timeout);
-  }, [roleIndex]);
+  }, [roleIndex, roles]);
 
   // Full-page dynamic canvas animation background
   useEffect(() => {
