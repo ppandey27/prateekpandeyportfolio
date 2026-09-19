@@ -4,6 +4,13 @@ import "./App.css";
 const PROFILE_IMAGE = "my-photo.jpg";
 const RESUME_FILE = "my-resume.pdf";
 
+const roles = [
+  "Full Stack Developer",
+  "React Native App Builder",
+  "React Specialist",
+  "Django Architect",
+];
+
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [typedText, setTypedText] = useState("");
@@ -11,15 +18,7 @@ function App() {
 
   const canvasRef = useRef(null);
 
-  const roles = [
-    "Full Stack Developer",
-    "React Native App Builder",
-    "React Specialist",
-    "Django Architect",
-  ];
-
   // Typing effect loop
- // Typing effect loop
   useEffect(() => {
     let index = 0;
     let deleting = false;
@@ -53,10 +52,8 @@ function App() {
     type();
 
     return () => clearTimeout(timeout);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [roleIndex]);
 
-  
   // Full-page dynamic canvas animation background
   useEffect(() => {
     const canvas = canvasRef.current;
