@@ -1,9 +1,16 @@
 import { useEffect, useState, useRef } from "react";
 import "./App.css";
 
-
 const PROFILE_IMAGE = "my-photo.jpg";
 const RESUME_FILE = "my-resume.pdf";
+
+// Roles ko component ke bahar shift kiya gaya hai taaki unnecessary re-creations na ho
+const ROLES = [
+  "Full Stack Developer",
+  "React Native App Builder",
+  "React Specialist",
+  "Django Architect",
+];
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,13 +19,6 @@ function App() {
 
   const canvasRef = useRef(null);
 
-  const roles = [
-    "Full Stack Developer",
-    "React Native App Builder",
-    "React Specialist",
-    "Django Architect",
-  ];
-
   // Typing effect loop
   useEffect(() => {
     let index = 0;
@@ -26,7 +26,7 @@ function App() {
     let timeout;
 
     const type = () => {
-      const word = roles[roleIndex];
+      const word = ROLES[roleIndex];
 
       if (!deleting) {
         setTypedText(word.substring(0, index + 1));
@@ -43,7 +43,7 @@ function App() {
 
         if (index === 0) {
           deleting = false;
-          setRoleIndex((prev) => (prev + 1) % roles.length);
+          setRoleIndex((prev) => (prev + 1) % ROLES.length);
         }
       }
 
@@ -393,7 +393,7 @@ function App() {
 
               <div className="image-overlay"></div>
 
-            </div>
+             </div>
 
               <div className="profile-info">
                 <strong>Prateek Pandey</strong>
