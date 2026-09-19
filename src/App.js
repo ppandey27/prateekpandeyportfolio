@@ -19,6 +19,7 @@ function App() {
   ];
 
   // Typing effect loop
+ // Typing effect loop
   useEffect(() => {
     let index = 0;
     let deleting = false;
@@ -52,8 +53,10 @@ function App() {
     type();
 
     return () => clearTimeout(timeout);
-  }, [roleIndex, roles]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [roleIndex]);
 
+  
   // Full-page dynamic canvas animation background
   useEffect(() => {
     const canvas = canvasRef.current;
