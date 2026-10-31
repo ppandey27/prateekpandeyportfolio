@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import "./App.css";
+import portalImg from './assects/Portal.PNG'; 
 
 const PROFILE_IMAGE = "my-photo.jpg";
 const RESUME_FILE = "my-resume.pdf";
@@ -695,217 +696,267 @@ function App() {
 
       {/* ================= PROJECTS ================= */}
 
-      <section
-        className="section projects-section reveal"
-        id="projects"
-      >
+<section className="section projects-section reveal" id="projects">
+      <div className="section-header-box">
+        <span className="section-tag">SELECTED PROJECTS</span>
+        <h2 className="section-title">
+          Web systems &{" "}
+          <span className="highlight-text">mobile applications.</span>
+        </h2>
+        <p className="section-desc">
+          Detailed overview of cross-platform mobile apps and web platforms.
+        </p>
+      </div>
 
-        <div className="section-header-box">
+      {/* Auto-scroll container wrapper */}
+      <div className="projects-scroll-container">
+        <div className="projects-grid auto-scroll">
+          
+          {/* ================= FIRST SET (Original 4 Cards) ================= */}
 
-          <span className="section-tag">
-            SELECTED PROJECTS
-          </span>
-
-          <h2 className="section-title">
-            Web systems &{" "}
-            <span className="highlight-text">
-              mobile applications.
-            </span>
-          </h2>
-
-          <p className="section-desc">
-            Detailed overview of cross-platform mobile apps
-            and web platforms.
-          </p>
-
-        </div>
-
-        <div className="projects-grid">
-
-          <article className="project-card">
-
-            <div className="project-number">
-              01
+          {/* ---------------- PROJECT 01 (Live Link + Imported portalImg) ---------------- */}
+          <a 
+            href="https://localcomplaintsystem.vercel.app" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="project-card project-link-card"
+          >
+            <div className="project-number">01</div>
+            <div className="project-visual custom-image-visual">
+              <img 
+                src={portalImg} 
+                alt="Local Complaint System" 
+                className="project-img" 
+              />
             </div>
-
-            <div className="project-visual mobileapp">
-
-              <div className="mobile-ui">
-
-                <div className="mobile-notch"></div>
-
-                <div className="mobile-screen">
-                  <i></i>
-                  <b></b>
-                  <b></b>
-                </div>
-
-              </div>
-
-            </div>
-
             <div className="project-content">
-
               <div className="project-tags">
-                <span>React Native</span>
-                <span>JavaScript</span>
-                <span>Mobile</span>
+                <span>React</span>
+                <span>Node.js</span>
+                <span>Web System</span>
               </div>
-
-              <h3>
-                Cross-Platform Mobile App
-              </h3>
-
+              <h3>Local Complaint System</h3>
               <p>
-                Custom mobile application built using React
-                Native featuring smooth UI transitions,
-                responsive navigation, and state management.
+                A community-driven web application designed to log, track, and resolve local civic issues efficiently with real-time status updates.
               </p>
-
               <div className="project-footer">
-                <span>Mobile Application</span>
+                <span>Live Web Application</span>
                 <b>↗</b>
               </div>
-
             </div>
+          </a>
 
-          </article>
-
+          {/* ---------------- PROJECT 02 (Dummy) ---------------- */}
           <article className="project-card">
-
-            <div className="project-number">
-              02
-            </div>
-
+            <div className="project-number">02</div>
             <div className="project-visual management">
-
               <div className="dashboard-ui">
-
                 <div className="ui-top">
-                  <span></span>
-                  <span></span>
-                  <span></span>
+                  <span></span><span></span><span></span>
                 </div>
-
                 <div className="ui-content">
-
                   <div className="ui-sidebar">
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                    <i></i>
+                    <i></i><i></i><i></i><i></i>
                   </div>
-
                   <div className="ui-main">
-
                     <div className="ui-title"></div>
-
                     <div className="ui-stats">
-                      <i></i>
-                      <i></i>
-                      <i></i>
+                      <i></i><i></i><i></i>
                     </div>
-
                     <div className="ui-chart">
-                      <b></b>
-                      <b></b>
-                      <b></b>
-                      <b></b>
-                      <b></b>
+                      <b></b><b></b><b></b><b></b><b></b>
                     </div>
-
                   </div>
-
                 </div>
-
               </div>
-
             </div>
-
             <div className="project-content">
-
               <div className="project-tags">
                 <span>React</span>
                 <span>Django</span>
                 <span>PostgreSQL</span>
               </div>
-
-              <h3>
-                Industry Management System
-              </h3>
-
+              <h3>Industry Management System</h3>
               <p>
-                Specialized enterprise software solution
-                developed to handle operational workflows
-                for a transformer manufacturing industry.
+                Specialized enterprise software solution developed to handle operational workflows for a transformer manufacturing industry.
               </p>
-
               <div className="project-footer">
                 <span>Production System</span>
                 <b>↗</b>
               </div>
-
             </div>
-
           </article>
 
+          {/* ---------------- PROJECT 03 (Dummy) ---------------- */}
           <article className="project-card">
-
-            <div className="project-number">
-              03
-            </div>
-
+            <div className="project-number">03</div>
             <div className="project-visual ecommerce">
-
               <div className="store-ui">
-
                 <div className="store-nav">
                   <strong>STORE</strong>
                   <span>⌕</span>
                 </div>
-
                 <div className="store-products">
-                  <i></i>
-                  <i></i>
-                  <i></i>
-                  <i></i>
+                  <i></i><i></i><i></i><i></i>
                 </div>
-
               </div>
-
             </div>
-
             <div className="project-content">
-
               <div className="project-tags">
                 <span>React</span>
                 <span>JavaScript</span>
                 <span>Database</span>
               </div>
-
-              <h3>
-                College E-Commerce Portal
-              </h3>
-
+              <h3>College E-Commerce Portal</h3>
               <p>
-                Structured e-commerce application featuring
-                comprehensive catalog management and
-                interactive shopping loops.
+                Structured e-commerce application featuring comprehensive catalog management and interactive shopping loops.
               </p>
-
               <div className="project-footer">
                 <span>Academic Application</span>
                 <b>↗</b>
               </div>
-
             </div>
+          </article>
 
+          {/* ---------------- PROJECT 04 (Coming Soon) ---------------- */}
+          <article className="project-card coming-soon-card">
+            <div className="project-number">04</div>
+            <div className="project-visual coming-soon-visual">
+              <div className="coming-soon-badge">🚀 In Development</div>
+            </div>
+            <div className="project-content">
+              <div className="project-tags">
+                <span>Next.js</span>
+                <span>AI</span>
+                <span>Cloud</span>
+              </div>
+              <h3>Project Coming Soon</h3>
+              <p>
+                An upcoming innovative web product currently under conceptualization and active development phase. Stay tuned!
+              </p>
+              <div className="project-footer">
+                <span>Upcoming Release</span>
+                <b>⚡</b>
+              </div>
+            </div>
+          </article>
+
+
+          {/* ================= SECOND SET (Exact Duplicates for Infinite Loop Seamlessness) ================= */}
+
+          {/* ---------------- PROJECT 01 (Duplicate) ---------------- */}
+          <a 
+            href="https://localcomplaintsystem.vercel.app" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="project-card project-link-card"
+          >
+            <div className="project-number">01</div>
+            <div className="project-visual custom-image-visual">
+              <img src={portalImg} alt="Local Complaint System" className="project-img" />
+            </div>
+            <div className="project-content">
+              <div className="project-tags">
+                <span>React</span>
+                <span>Node.js</span>
+                <span>Web System</span>
+              </div>
+              <h3>Local Complaint System</h3>
+              <p>
+                A community-driven web application designed to log, track, and resolve local civic issues efficiently with real-time status updates.
+              </p>
+              <div className="project-footer">
+                <span>Live Web Application</span>
+                <b>↗</b>
+              </div>
+            </div>
+          </a>
+
+          {/* ---------------- PROJECT 02 (Duplicate) ---------------- */}
+          <article className="project-card">
+            <div className="project-number">02</div>
+            <div className="project-visual management">
+              <div className="dashboard-ui">
+                <div className="ui-top"><span></span><span></span><span></span></div>
+                <div className="ui-content">
+                  <div className="ui-sidebar"><i></i><i></i><i></i><i></i></div>
+                  <div className="ui-main">
+                    <div className="ui-title"></div>
+                    <div className="ui-stats"><i></i><i></i><i></i></div>
+                    <div className="ui-chart"><b></b><b></b><b></b><b></b><b></b></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="project-content">
+              <div className="project-tags">
+                <span>React</span>
+                <span>Django</span>
+                <span>PostgreSQL</span>
+              </div>
+              <h3>Industry Management System</h3>
+              <p>
+                Specialized enterprise software solution developed to handle operational workflows for a transformer manufacturing industry.
+              </p>
+              <div className="project-footer">
+                <span>Production System</span>
+                <b>↗</b>
+              </div>
+            </div>
+          </article>
+
+          {/* ---------------- PROJECT 03 (Duplicate) ---------------- */}
+          <article className="project-card">
+            <div className="project-number">03</div>
+            <div className="project-visual ecommerce">
+              <div className="store-ui">
+                <div className="store-nav"><strong>STORE</strong><span>⌕</span></div>
+                <div className="store-products"><i></i><i></i><i></i><i></i></div>
+              </div>
+            </div>
+            <div className="project-content">
+              <div className="project-tags">
+                <span>React</span>
+                <span>JavaScript</span>
+                <span>Database</span>
+              </div>
+              <h3>College E-Commerce Portal</h3>
+              <p>
+                Structured e-commerce application featuring comprehensive catalog management and interactive shopping loops.
+              </p>
+              <div className="project-footer">
+                <span>Academic Application</span>
+                <b>↗</b>
+              </div>
+            </div>
+          </article>
+
+          {/* ---------------- PROJECT 04 (Duplicate) ---------------- */}
+          <article className="project-card coming-soon-card">
+            <div className="project-number">04</div>
+            <div className="project-visual coming-soon-visual">
+              <div className="coming-soon-badge">🚀 In Development</div>
+            </div>
+            <div className="project-content">
+              <div className="project-tags">
+                <span>Next.js</span>
+                <span>AI</span>
+                <span>Cloud</span>
+              </div>
+              <h3>Project Coming Soon</h3>
+              <p>
+                An upcoming innovative web product currently under conceptualization and active development phase. Stay tuned!
+              </p>
+              <div className="project-footer">
+                <span>Upcoming Release</span>
+                <b>⚡</b>
+              </div>
+            </div>
           </article>
 
         </div>
-
-      </section>
-
+      </div>
+    </section>
       {/* ================= CONTACT ================= */}
 
       <section
