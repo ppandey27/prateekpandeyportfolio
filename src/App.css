@@ -3,6 +3,25 @@
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+/* Universal Box Sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Body aur HTML overflow roknne ke liye */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Sabhi images aur media ko responsive banane ke liye */
+img, video, canvas, svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 
 :root {
   --bg-primary: #070b14;
@@ -35,6 +54,123 @@
   padding: 0;
 }
 
+
+/* =======project======== */
+
+/* Container styling with side gradient mask */
+.projects-scroll-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  padding: 20px 0;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+/* Auto-scroll track (Ab 4 original + 4 duplicate cards hain, isliye duration adjust kar sakte hain) */
+.projects-grid.auto-scroll {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: scrollProjects 35s linear infinite;
+}
+
+/* Pause animation on hover */
+.projects-scroll-container:hover .projects-grid.auto-scroll {
+  animation-play-state: paused;
+}
+
+@keyframes scrollProjects {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Bilkul aadhi list shift hone par seamless loop ban jayega */
+  }
+}
+
+/* --- CARDS WIDTH & RESPONSIVE DESIGN --- */
+.project-card {
+  flex: 0 0 300px;
+  width: 300px;
+  box-sizing: border-box;
+}
+
+/* No underline and clean clickable link style */
+.project-link-card {
+  text-decoration: none !important;
+  color: inherit;
+  cursor: pointer;
+  display: block;
+}
+
+.project-link-card:hover,
+.project-link-card:focus {
+  text-decoration: none !important;
+}
+
+/* Image visual box */
+.custom-image-visual {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #111;
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-link-card:hover .project-img {
+  transform: scale(1.05);
+}
+
+/* Coming Soon card visual styling */
+.coming-soon-visual {
+  width: 100%;
+  height: 160px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #1f1f1f, #111);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+}
+
+.coming-soon-badge {
+  font-size: 14px;
+  font-weight: 600;
+  color: #a855f7; /* Vibrant accent color */
+  background: rgba(168, 85, 247, 0.1);
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+@media (max-width: 768px) {
+  .project-card {
+    flex: 0 0 260px;
+    width: 260px;
+  }
+  
+  .projects-grid.auto-scroll {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-card {
+    flex: 0 0 240px;
+    width: 240px;
+  }
+}
+
+/* ================================ */
 html {
   scroll-behavior: smooth;
   font-family: 'Plus Jakarta Sans', sans-serif;
@@ -1200,4 +1336,6 @@ body {
     width: 280px;
     height: 350px;
   }
+
+  
 }
