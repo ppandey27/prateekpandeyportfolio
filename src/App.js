@@ -749,20 +749,14 @@ function App() {
           </a>
 
 
-
-          {/* ---------------- PROJECT 02 (Dummy) ---------------- */}
-        <article className="project-card">
-      {/* Pura card click karne par Vercel link par jayega */}
+        {/* ---------------- PROJECT 02 ---------------- */}
       <a 
         href="https://school-project-gamma-wheat.vercel.app" 
         target="_blank" 
         rel="noopener noreferrer" 
         className="project-card project-link-card"
-        style={{ textDecoration: 'none' }}
       >
         <div className="project-number">02</div>
-        
-        {/* Visual / Image Section (Project 01 jaisa structure) */}
         <div className="project-visual custom-image-visual">
           <img 
             src={managementImage} 
@@ -770,28 +764,22 @@ function App() {
             className="project-img" 
           />
         </div>
-
-        {/* Content Section */}
         <div className="project-content">
           <div className="project-tags">
             <span>React</span>
             <span>Django</span>
             <span>PostgreSQL</span>
           </div>
-          
           <h3>School Management System</h3>
-          
           <p>
             Comprehensive web platform built for educational institutions to streamline student records, attendance, and administrative workflows.
           </p>
-          
           <div className="project-footer">
             <span>Live School Portal</span>
             <b>↗</b>
           </div>
         </div>
       </a>
-    </article>
 
           {/* ---------------- PROJECT 03 (Dummy) ---------------- */}
 
