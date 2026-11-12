@@ -1,6 +1,8 @@
 import { useEffect, useState, useRef } from "react";
 import "./App.css";
 import portalImg from './assects/Portal.PNG'; 
+import managementImage from './assects/School.PNG'
+import udaanImage from './assects/udaan-preview.PNG'
 
 const PROFILE_IMAGE = "my-photo.jpg";
 const RESUME_FILE = "my-resume.pdf";
@@ -746,77 +748,84 @@ function App() {
             </div>
           </a>
 
+
+
           {/* ---------------- PROJECT 02 (Dummy) ---------------- */}
-          <article className="project-card">
-            <div className="project-number">02</div>
-            <div className="project-visual management">
-              <div className="dashboard-ui">
-                <div className="ui-top">
-                  <span></span><span></span><span></span>
-                </div>
-                <div className="ui-content">
-                  <div className="ui-sidebar">
-                    <i></i><i></i><i></i><i></i>
-                  </div>
-                  <div className="ui-main">
-                    <div className="ui-title"></div>
-                    <div className="ui-stats">
-                      <i></i><i></i><i></i>
-                    </div>
-                    <div className="ui-chart">
-                      <b></b><b></b><b></b><b></b><b></b>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="project-content">
-              <div className="project-tags">
-                <span>React</span>
-                <span>Django</span>
-                <span>PostgreSQL</span>
-              </div>
-              <h3>Industry Management System</h3>
-              <p>
-                Specialized enterprise software solution developed to handle operational workflows for a transformer manufacturing industry.
-              </p>
-              <div className="project-footer">
-                <span>Production System</span>
-                <b>↗</b>
-              </div>
-            </div>
-          </article>
+        <article className="project-card">
+      {/* Pura card click karne par Vercel link par jayega */}
+      <a 
+        href="https://school-project-gamma-wheat.vercel.app" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="project-card project-link-card"
+        style={{ textDecoration: 'none' }}
+      >
+        <div className="project-number">02</div>
+        
+        {/* Visual / Image Section (Project 01 jaisa structure) */}
+        <div className="project-visual custom-image-visual">
+          <img 
+            src={managementImage} 
+            alt="School Management System" 
+            className="project-img" 
+          />
+        </div>
+
+        {/* Content Section */}
+        <div className="project-content">
+          <div className="project-tags">
+            <span>React</span>
+            <span>Django</span>
+            <span>PostgreSQL</span>
+          </div>
+          
+          <h3>School Management System</h3>
+          
+          <p>
+            Comprehensive web platform built for educational institutions to streamline student records, attendance, and administrative workflows.
+          </p>
+          
+          <div className="project-footer">
+            <span>Live School Portal</span>
+            <b>↗</b>
+          </div>
+        </div>
+      </a>
+    </article>
 
           {/* ---------------- PROJECT 03 (Dummy) ---------------- */}
-          <article className="project-card">
-            <div className="project-number">03</div>
-            <div className="project-visual ecommerce">
-              <div className="store-ui">
-                <div className="store-nav">
-                  <strong>STORE</strong>
-                  <span>⌕</span>
-                </div>
-                <div className="store-products">
-                  <i></i><i></i><i></i><i></i>
-                </div>
-              </div>
-            </div>
-            <div className="project-content">
-              <div className="project-tags">
-                <span>React</span>
-                <span>JavaScript</span>
-                <span>Database</span>
-              </div>
-              <h3>College E-Commerce Portal</h3>
-              <p>
-                Structured e-commerce application featuring comprehensive catalog management and interactive shopping loops.
-              </p>
-              <div className="project-footer">
-                <span>Academic Application</span>
-                <b>↗</b>
-              </div>
-            </div>
-          </article>
+
+          <a 
+      
+        href="https://projectudaancollegeproject.vercel.app" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="project-card project-link-card"
+      >
+        <div className="project-number">03</div>
+        <div className="project-visual custom-image-visual">
+          <img 
+            src={udaanImage} 
+            alt="College E-Commerce Portal (Udaan)" 
+            className="project-img" 
+          />
+        </div>
+        <div className="project-content">
+          <div className="project-tags">
+            <span>React</span>
+            <span>JavaScript</span>
+            <span>Database</span>
+          </div>
+          <h3>College E-Commerce Portal (Udaan)</h3>
+          <p>
+            A dedicated donation and sharing platform for books, notes, and uniforms, connecting donors directly with students in need.
+          </p>
+          <div className="project-footer">
+            <span>Academic Application</span>
+            <b>↗</b>
+          </div>
+        </div>
+      </a>
 
           {/* ---------------- PROJECT 04 (Coming Soon) ---------------- */}
           <article className="project-card coming-soon-card">
